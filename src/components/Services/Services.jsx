@@ -100,7 +100,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-50 relative overflow-hidden">
+    <section id="services" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-50 via-white to-slate-50 relative overflow-hidden">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute inset-0" style={{
@@ -111,14 +111,14 @@ const Services = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <motion.span
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full text-sm font-semibold mb-4 shadow-lg"
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-gradient-primary text-white rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4 shadow-lg"
           >
-            <HiCheckBadge className="w-4 h-4" />
+            <HiCheckBadge className="w-3 h-3 sm:w-4 sm:h-4" />
             <span>Our Services</span>
           </motion.span>
           
@@ -127,17 +127,17 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-slate-900"
           >
-            Services That <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">Drive Results</span>
+            Services That <span className="text-gradient">Drive Results</span>
           </motion.h2>
           
-          <motion.p
+            <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-slate-600 max-w-2xl mx-auto"
+            className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed"
           >
             Comprehensive digital marketing solutions designed to transform your brand 
             and deliver measurable ROI across every channel.
@@ -150,7 +150,7 @@ const Services = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16"
         >
           {services.map((service, index) => (
             <motion.div
@@ -161,14 +161,14 @@ const Services = () => {
               className="group relative"
             >
               {/* Card Container */}
-              <div className="h-full bg-white rounded-2xl p-8 border-2 border-slate-100 transition-all duration-300 hover:border-transparent hover:shadow-2xl hover:-translate-y-2">
+              <div className="h-full card-gradient p-4 sm:p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
                 
                 {/* Gradient Glow on Hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`} />
                 
                 {/* Popular Badge */}
                 {service.popular && (
-                  <div className="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10">
+                  <div className="absolute -top-3 -right-3 bg-gradient-warning text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10">
                     POPULAR
                   </div>
                 )}
@@ -176,35 +176,35 @@ const Services = () => {
                 {/* Content */}
                 <div className="relative z-10">
                   {/* Icon & Process Number */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl text-white shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                  <div className="flex items-start justify-between mb-4">
+                    <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br ${service.color} rounded-xl text-white shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
                       {service.icon}
                     </div>
-                    <span className="text-4xl font-bold text-slate-100 group-hover:text-slate-200 transition-colors">
+                    <span className="text-2xl sm:text-3xl font-bold text-slate-100 group-hover:text-slate-200 transition-colors">
                       {service.process}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors duration-300">
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors duration-300">
                     {service.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-slate-600 mb-6 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-600 mb-4 leading-relaxed">
                     {service.description}
                   </p>
 
                   {/* Features List */}
-                  <ul className="space-y-3 mb-6">
+                  <ul className="space-y-2 mb-4">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center text-slate-700">
-                        <div className={`w-5 h-5 rounded-full bg-gradient-to-br ${service.color} flex items-center justify-center mr-3 flex-shrink-0`}>
-                          <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className={`w-4 h-4 rounded-full bg-gradient-to-br ${service.color} flex items-center justify-center mr-2 flex-shrink-0`}>
+                          <svg className="w-2 h-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <span className="text-sm font-medium">{feature}</span>
+                        <span className="text-xs sm:text-sm font-medium">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -212,10 +212,10 @@ const Services = () => {
                   {/* CTA Button */}
                   <a
                     href="#contact"
-                    className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${service.color} text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group/btn w-full justify-center`}
+                    className="btn-primary w-full justify-center group/btn text-sm py-2"
                   >
                     <span>Get Started</span>
-                    <HiArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                    <HiArrowRight className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform duration-300" />
                   </a>
                 </div>
               </div>
@@ -259,7 +259,7 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="text-center bg-gradient-to-r from-primary via-secondary to-accent rounded-2xl p-12 shadow-2xl relative overflow-hidden"
+          className="text-center bg-gradient-animated rounded-2xl p-12 shadow-2xl relative overflow-hidden"
         >
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
@@ -279,14 +279,14 @@ const Services = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contact"
-                className="px-8 py-4 bg-white text-primary font-bold rounded-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2"
+                className="px-8 py-4 bg-white text-primary-600 font-bold rounded-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2"
               >
                 <span>Get Free Consultation</span>
                 <HiArrowRight className="w-5 h-5" />
               </a>
               <a
                 href="#portfolio"
-                className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-bold rounded-lg border-2 border-white/30 hover:bg-white/20 hover:scale-105 transition-all duration-300 inline-flex items-center justify-center"
+                className="glass text-white font-bold rounded-lg hover:bg-white/20 hover:scale-105 transition-all duration-300 inline-flex items-center justify-center px-8 py-4"
               >
                 View Our Work
               </a>

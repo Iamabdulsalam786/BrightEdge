@@ -53,11 +53,11 @@ const Header = () => {
         transition={{ duration: 0.5 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/90 backdrop-blur-md shadow-lg py-4'
-            : 'bg-transparent py-6'
+            ? 'bg-white/90 backdrop-blur-md shadow-lg py-2 sm:py-4'
+            : 'bg-transparent py-3 sm:py-6'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <motion.a
@@ -67,11 +67,11 @@ const Header = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-primary via-secondary to-accent rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">BE</span>
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-glow transition-all duration-300">
+                <span className="text-white font-bold text-lg sm:text-xl">BE</span>
               </div>
               <div className="flex flex-col">
-                <span className={`font-bold text-lg leading-none transition-colors ${
+                <span className={`font-bold text-base sm:text-lg leading-none transition-colors ${
                   isScrolled ? 'text-slate-800' : 'text-white'
                 }`}>
                   BrightEdge
@@ -85,7 +85,7 @@ const Header = () => {
             </motion.a>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
               {navLinks.map((link, index) => (
                 <motion.a
                   key={link.name}
@@ -110,7 +110,7 @@ const Header = () => {
             <motion.a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
-              className="hidden md:block px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              className="hidden lg:block btn-primary text-sm xl:text-base px-4 xl:px-6 py-2 xl:py-3"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -120,7 +120,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <motion.button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`md:hidden p-2 rounded-lg transition-colors ${
+              className={`lg:hidden p-2 rounded-lg transition-colors ${
                 isScrolled ? 'text-slate-800' : 'text-white'
               }`}
               whileHover={{ scale: 1.1 }}
@@ -128,9 +128,9 @@ const Header = () => {
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <HiX className="w-7 h-7" />
+                <HiX className="w-6 h-6 sm:w-7 sm:h-7" />
               ) : (
-                <HiMenuAlt3 className="w-7 h-7" />
+                <HiMenuAlt3 className="w-6 h-6 sm:w-7 sm:h-7" />
               )}
             </motion.button>
           </div>
